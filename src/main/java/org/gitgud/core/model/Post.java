@@ -7,10 +7,18 @@ public abstract class Post {
     int width, height;
     List<String> lines;
 
-    void calcDimensionsFromLines() {
+    void setDimensions(int width, int height) {
+        this.width = width + 4; // Pad content left and right by 1
+        this.height = height + 2;
+    }
+
+    void setDimensionsFromLines() {
         if (lines == null) return;
-        width = lines.stream().mapToInt(String::length).max().orElse(0) + 4;
-        height = lines.size() + 2;
+        int maxWidth = lines.stream()
+                .mapToInt(String::length)
+                .max().orElse(0);
+        int maxHeight = lines.size();
+        setDimensions(maxWidth, maxHeight);
     }
 
     public int getX() {

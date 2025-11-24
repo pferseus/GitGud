@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class PostPacker implements Consumer<Post> {
-    static final int PAD = 1;
+    static final int PAD = -1;
 
     final List<Post> placed = new ArrayList<>();
 

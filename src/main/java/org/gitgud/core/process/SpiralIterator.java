@@ -3,7 +3,7 @@ package org.gitgud.core.process;
 import java.util.Iterator;
 
 public class SpiralIterator implements Iterator<int[]> {
-    static final int HORIZONTAL_BIAS = 3;
+    static final int HORIZONTAL_BIAS = 4;
 
     int x = 0, y = 0;
     int dx = 0, dy = -1; // Start moving UP
